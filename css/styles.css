@@ -9,91 +9,110 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
+
+/* Helper Classes */
+
+.flex{
+    display:flex;
+}
+.flex--center{
+    justify-content: center;
+    align-items: center;
+}
+
+.column--center{
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+/* Blocks */
+
 .container{
     display:flex;
     height: 100vh;
 }
 
 
-.imgContainer{
-    flex:2;
+
+.img--container{
+    flex:1;
     color: #403D4C;
     background-color: #F9F9F9;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
 }
 
-.loginContainer{
+.login--container{
     background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex:2
+    flex:1; 
 }
 
-.heroLeft{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+/* Login */
+
+.hero--left{
+   
     max-width: 350px;
     padding: 1rem;
 }
-.heroRight{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 600px;
-    padding: 1rem;
-}
 
-.imgContainer img{
-    max-width: 450px;
-    align-self: center;
-}
-
-.logoText{
-    margin: 1.5rem 0 2rem;
-}
-
-.loginButton{
-    background-color: #FF7E10;
-    outline: none;
-    border: none;
-    padding: 1rem .8rem;
-    
-    border-radius: 5px;
-    display: flex;
+.login--button{
     align-items: center;
+    background-color: #FF7E10;
+    border: none;
+    border-radius: 5px;
     color: #fff;
+    cursor: pointer;
+    display: flex;
     font-weight: bold;
     justify-content: space-between;
-    cursor: pointer;
+    outline: none;
+    padding: 1rem .8rem;
     transition: all 0.2s;
     width: 100%;
 
 }
 
-.loginButton:hover{
+.login--button:hover{
     opacity: .5;
 }
-
-.imgText{
-    font-size: 1.4rem;
-    max-width: 42ch;
-    text-align: center;
-    line-height: 1.5;
+.logo--text{
+    margin: 1.5rem 0 2rem;
 }
 
-.imgSubText{
+
+/* Info section */
+
+
+.hero--right{
+  
+    max-width: 600px;
+    padding: 1rem;
+}
+
+.img--container img{
+    max-width: 450px;
+    align-self: center;
+}
+
+.image--text{
+    font-size: 1.4rem;
+    max-width: 42ch;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.image--subtext{
     color: #5D5A6F;
-    text-align: center;
     padding: 0rem 3rem;
 }
 
-.creditsText{
+.credits{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -102,7 +121,7 @@ body{
 }
 
 @media screen and (max-width:1000px) {
-    .imgContainer{
+    .img--container{
         display: none;
     }
 }
