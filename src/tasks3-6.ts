@@ -4,14 +4,13 @@ interface UserRecord {
     device:string;
     action:Action;
     date_actioned:number
-    
 }
 
 type Action = "start"|"stop"
 
 function getUsers(records:UserRecord [], action: Action, start_time: number, end_time: number) : number []{
 
-    //Setup: created users array to return and filteredarray for matching record
+    //Setup: created users array to return and filtered array for matching record
     let users: number []=[]
     const filteredArray: UserRecord [] = records.filter(record => record.action === action && start_time<= record.date_actioned && record.date_actioned<=end_time)
     
@@ -55,7 +54,6 @@ function getPlaybackTime(user_id:number,records:UserRecord [] ):number{
                 break
             }
             else if(testRecord.device == currentDevice &&testRecord.action==="stop"&& overlapStopTime<testRecord.date_actioned){
-
                 //If the testrecord device has a stop time higher than our current one (It is overlapping)
                 // add to total time, using difference of the current stop time
                 totalTime=totalTime+ (testRecord.date_actioned- overlapStopTime)
@@ -104,7 +102,8 @@ const records2: UserRecord[]=[
     { user_id: 1, device: "OSX 15.4", action: "stop", date_actioned: 490 },
     { user_id: 1, device: "Android", action: "stop", date_actioned: 500 },
 
-]
+];
+
 let res3=getPlaybackTime(1,records2)
 console.log(res3) //expect 400
 
