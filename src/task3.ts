@@ -11,9 +11,12 @@ interface UserRecord {
 type Action = "start"|"stop"
 
 function getUsers(records:UserRecord [], action: Action, start_time: number, end_time: number) : number []{
+
+    //Setup: created users array to return and filteredarray for matching record
     let users: number []=[]
     const filteredArray: UserRecord [] = records.filter(record => record.action === action && start_time<= record.date_actioned && record.date_actioned<=end_time)
     
+    //To avoid duplicate values
     filteredArray.map(record=>{
         if(!users.includes(record.user_id)){
             users.push(record.user_id)
