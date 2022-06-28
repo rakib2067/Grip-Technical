@@ -8,7 +8,7 @@
 - `NodeJS`
 - `validator`
 
-### Instalation
+### Installation
 
 - Clone or download the repo
 - Open terminal and run `npm install`
