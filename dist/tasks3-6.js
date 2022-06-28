@@ -20,16 +20,12 @@ function getPlaybackTime(user_id, records) {
             for (let j = i + 1; j < filteredArray.length; j++) {
                 let testRecord = filteredArray[j];
                 if (testRecord.device == currentDevice && testRecord.action === "stop" && currentRecord.date_actioned > overlapStopTime) {
-                    console.log(`no overlap ${currentDevice} ${testRecord.device}`);
                     totalTime = totalTime + (testRecord.date_actioned - currentRecord.date_actioned);
                     overlapStopTime = testRecord.date_actioned;
                     break;
                 }
                 else if (testRecord.device == currentDevice && testRecord.action === "stop" && overlapStopTime < testRecord.date_actioned) {
-                    console.log(`overlap ${currentDevice} ${testRecord.device}`);
-                    console.log(testRecord.date_actioned, overlapStopTime);
                     totalTime = totalTime + (testRecord.date_actioned - overlapStopTime);
-                    console.log('total: ', totalTime);
                     overlapStopTime = testRecord.date_actioned;
                     break;
                 }
