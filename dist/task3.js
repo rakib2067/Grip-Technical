@@ -45,6 +45,8 @@ const records = [
 ];
 let res = getUsers(records, 'start', 700, 900);
 console.log(res);
+let res1 = getUsers(records, 'start', 100, 900);
+console.log(res1);
 let res2 = getPlaybackTime(1, records);
 console.log(res2);
 const records2 = [

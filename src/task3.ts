@@ -1,6 +1,5 @@
 interface UserRecord {
-    
-    
+
     user_id: number;
     device:string;
     action:Action;
@@ -82,14 +81,15 @@ const records: UserRecord[]=[
 ]
 
 
-
-
-
 let res=getUsers(records,'start',700, 900)
-console.log(res)
+console.log(res) //Expect [3]
+
+let res1=getUsers(records,'start',100, 900)
+console.log(res1) //Expect [1,2,3]
+
 
 let res2=getPlaybackTime(1,records)
-console.log(res2)
+console.log(res2) //Expect 310
 
 
 
@@ -106,7 +106,7 @@ const records2: UserRecord[]=[
 
 ]
 let res3=getPlaybackTime(1,records2)
-console.log(res3)
+console.log(res3) //expect 400
 
 // Test for no overlap
 const records3: UserRecord[]=[
@@ -121,4 +121,4 @@ const records3: UserRecord[]=[
 ]
 
 let res4=getPlaybackTime(1,records3)
-console.log(res4)
+console.log(res4) //expect 250
