@@ -22,3 +22,9 @@
 - From root directory, run `tsc` or if not globally installed, `npm run build` to compile typescript code
 - run `node dist/src/task2.js`
 - run `node dist/src/tasks3-6.js`
+
+## Shortcomings/Limitations
+
+### Task 4
+
+- Nested for loops means time complexity of O(n^2), which can lead to slow performance for large inputs
