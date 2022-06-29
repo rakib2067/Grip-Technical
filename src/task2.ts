@@ -4,7 +4,7 @@ import isEmail from 'validator/lib/isEmail';
 
 
 //Interface for input received from register form 
-interface UserInput{
+export interface UserInput{
     username:string;
     email:string;
     password:string;
@@ -12,7 +12,7 @@ interface UserInput{
 
 
 
-function sanitizeInput({username,email,password}:UserInput): UserInput| unknown{
+export function sanitizeInput({username,email,password}:UserInput): UserInput| unknown{
 
     try {
         //trim input to remove extra space
@@ -41,11 +41,11 @@ function sanitizeInput({username,email,password}:UserInput): UserInput| unknown{
         if (error instanceof Error) {
             error.message 
         }
-        return error
+        return error 
     }
       
 }
 
-let res=sanitizeInput({username:'<rakib777>',email:'rakib7@hotmail.co.uk',password:'rakib888'})
+let res=sanitizeInput({username:'<rakib123>',email:'rakib7@hotmail.co.uk',password:'rakib555'})
 
 console.log(res)
