@@ -15,6 +15,7 @@
 
 ### Usage
 
+- First run `npm test` to run all tests
 - run `tsc` to compile typescript code
-- run `node dist/task2.js`
-- run `node dist/tasks3-6.js`
+- run `node dist/src/task2.js`
+- run `node dist/src/tasks3-6.js`
