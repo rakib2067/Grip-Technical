@@ -1,4 +1,4 @@
-interface UserRecord {
+export interface UserRecord {
 
     user_id: number;
     device:string;
@@ -6,9 +6,9 @@ interface UserRecord {
     date_actioned:number
 }
 
-type Action = "start"|"stop"
+export type Action = "start"|"stop"
 
-function getUsers(records:UserRecord [], action: Action, start_time: number, end_time: number) : number []{
+export function getUsers(records:UserRecord [], action: Action, start_time: number, end_time: number) : number []{
 
     //Setup: created users array to return and filtered array for matching record
     let users: number []=[]
@@ -23,7 +23,7 @@ function getUsers(records:UserRecord [], action: Action, start_time: number, end
     return users
 }
 
-function getPlaybackTime(user_id:number,records:UserRecord [] ):number{
+export function getPlaybackTime(user_id:number,records:UserRecord [] ):number{
 
     //Setup: declare variable to be returned and filter array for our user
 
@@ -121,3 +121,4 @@ const records3: UserRecord[]=[
 
 let res4=getPlaybackTime(1,records3)
 console.log(res4) //expect 250
+
