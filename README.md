@@ -6,6 +6,7 @@
 
 - `TypeScript`
 - `NodeJS`
+- `Jest`
 - `validator`
 
 ### Installation
